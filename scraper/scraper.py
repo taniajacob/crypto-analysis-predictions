@@ -217,10 +217,11 @@ class CoinMarketCapScraper(HistoricalDataDownloader):
     def export_all_currencies(self):
         cache_path = os.path.join(self.cache_path, self.CURRENCIES_DIR)
         df = pd.concat(map(pd.read_csv, glob.glob(os.path.join(cache_path, "*.csv"))))
-        df.to_csv('all_currencies_df.csv')
+        df.to_csv('all_currencies.csv')
  
 if __name__ == '__main__':
-    scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 3, 24))
+    #scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 3, 24))
+    scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 3, 31))
     df = scraper.fetch_all()
     scraper.export_all_currencies()
 	
