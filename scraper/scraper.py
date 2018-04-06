@@ -221,7 +221,7 @@ class CoinMarketCapScraper(HistoricalDataDownloader):
  
 if __name__ == '__main__':
     #scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 3, 24))
-    scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 3, 31))
+    scraper = CoinMarketCapScraper(end=datetime.datetime(2018, 4, 5))
     df = scraper.fetch_all()
     scraper.export_all_currencies()
 	
